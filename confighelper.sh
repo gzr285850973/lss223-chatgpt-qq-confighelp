@@ -38,7 +38,7 @@ api_key = \"$verifykey\"
 http_url = \"http://mirai:${http_url_port}\"
 ws_url = \"http://mirai:${ws_url_port}\"
 [openai]
-browserless_endpoint = \"https://bypass.duti.tech/api/\"" > config.cfg
+browserless_endpoint = \"https://bypass.duti.tech/\"" > config.cfg
 }
 #设置bot模式为telegram
 function set_telegram_bot {
@@ -58,7 +58,7 @@ function set_telegram_bot {
 bot_token = \"$bot_token\"
 $proxy
 [openai]
-browserless_endpoint = \"https://bypass.duti.tech/api/\"" > config.cfg
+browserless_endpoint = \"https://bypass.duti.tech/\"" > config.cfg
 }
 # 设置bot模式为onebot
 function set_onebot {
@@ -77,7 +77,7 @@ manager_qq = $manager_qq
 reverse_ws_host = \"$reverse_ws_host\"
 reverse_ws_port = $reverse_ws_port
 [openai]
-browserless_endpoint = \"https://bypass.duti.tech/api/\"" >> config.cfg
+browserless_endpoint = \"https://bypass.duti.tech/\"" >> config.cfg
 }
 #设置浏览器模式
 function select_browser_mode {
