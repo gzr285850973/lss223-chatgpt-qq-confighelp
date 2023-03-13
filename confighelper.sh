@@ -352,7 +352,7 @@ else
 fi
 echo -n "[presets]
 # 切换预设的命令： 加载预设 猫娘
-command = \"加载预设 (\\\\\\\\w+)\"
+command = \"加载预设 (\\\\w+)\"
 loaded_successful = \"预设加载成功！\"
 scan_dir = \"./presets/\"
 [presets.keywords]
