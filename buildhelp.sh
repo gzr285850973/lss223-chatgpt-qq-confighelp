@@ -50,7 +50,7 @@ function config_help {
     if [ -f "$confighelper_path" ]; then
         bash $confighelper_path
     else
-        wget -nv https://raw.githubusercontent.com/Cloxl/lss223-chatgpt-qq-confighelp/main/confighelper.sh && confighelper.sh $chatgpt_path && bash confighelper.sh && mv config.cfg $chatgpt_path
+       wget -nv https://raw.githubusercontent.com/Cloxl/lss223-chatgpt-qq-confighelp/main/confighelper.sh && mv confighelper.sh $chatgpt_path && bash confighelper.sh && mv config.cfg $chatgpt_path
     fi
 }
 function main {
