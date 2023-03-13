@@ -1,7 +1,7 @@
 #!/bin/bash
 #函数定义区
 #设置bot模式为mirai
-function  set_mirai_bot {
+function set_mirai_bot {
     echo -e "\033[32m接下来是mirai的配置\033[0m"
     echo -e  "您机器人的QQ号是多少？"
     read qq_number
