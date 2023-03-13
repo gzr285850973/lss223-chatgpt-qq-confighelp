@@ -299,19 +299,19 @@ if echo -e "$prefix" | grep -iq "^y"; then
     echo -e "配置群里如何让机器人响应，\033[32mat\033[0m 表示需要群里 \033[32m@\033[0m 机器人， \033[32mmention\033[0m 表示 \033[32m@\033[0m 或者\033[32m以机器人名字开头\033[0m都可以，\033[32mnone\033[0m 表示\033[32m不需要\033[0m"
     read require_mention
     echo -e "require_mention = \"${require_mention}\"
-prefix_ai = { "chatgpt-web" = ["gpt"], "bing-c" = ["bing"] }
-prefix_image = ["画", "看"]
+prefix_ai = { \"chatgpt-web\" = [\"gpt\"], \"bing-c\" = [\"bing\"] }
+prefix_image = [\"画\",\"看\"]
 reset_command = [ \"重置会话\",]
 rollback_command = [ \"回滚会话\",] ">> config.cfg
 else
-    echo -e "prefix = [ "",]
-prefix_friend = [ "",]
-prefix_group = [ "",]
-prefix_ai = { "chatgpt-web" = ["gpt"], "bing-c" = ["bing"] }
-prefix_image = ["画", "看"]
-require_mention = "at"
-reset_command = [ "重置会话",]
-rollback_command = [ "回滚会话",] " >>config.cfg
+    echo -e "prefix = [ \"\",]
+prefix_friend = [ \"\",]
+prefix_group = [ \"\",]
+prefix_ai = { \"chatgpt-web\" = [\"gpt\"], \"bing-c\" = [\"bing\"] }
+prefix_image = [\"画\", \"看\"]
+require_mention = \"at\"
+reset_command = [ \"重置会话\",]
+rollback_command = [ \"回滚会话\",] " >>config.cfg
 fi
 clear
 echo -e "恭喜你完成了机器人响应的设置，现在是百度云安全内容审核的设置请问是否需要？（y/n，默认n）"
