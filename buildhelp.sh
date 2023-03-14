@@ -37,7 +37,7 @@ function update_chatgpt {
         cd $chatgpt_path
         docker-compose pull
     else
-        echo -e "配置文件不存在，请下载程序或者使用confighelper! 
+        echo -e "配置文件不存在，请下载程序或者使用confighelper!"
     fi
 }
 function login_qq {
@@ -45,14 +45,14 @@ function login_qq {
         cd $chatgpt_path
         docker run --rm mirai
     else
-        echo -e "配置文件不存在，请下载程序或者使用confighelper! 
+        echo -e "配置文件不存在，请下载程序或者使用confighelper!"
     fi
 }
 function config_help {
     if [ -f "$confighelper_path" ]; then
         bash $confighelper_path
     else
-       curl -o confighelper.sh https://raw.githubusercontent.com/Cloxl/lss223-chatgpt-qq-confighelp/main/confighelper.sh && mv confighelper.sh $chatgpt_path && bash $confighelper_path && mv config.cfg $chatgpt_path
+       curl -o confighelper.sh https://raw.githubusercontent.com/Cloxl/lss223-chatgpt-qq-confighelp/main/confighelper.sh && mv confighelper.sh $chatgpt_path && bash $confighelper_path
     fi
 }
 function main {
