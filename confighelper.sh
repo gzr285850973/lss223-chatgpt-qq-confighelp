@@ -13,6 +13,7 @@ function set_mirai_bot {
     echo -e "您机器人管理员的QQ号是多少？"
     read manager_qq
     echo -e "您是否需要更改mirai-http-api中的verifyKey？（y/n，默认n）"
+    echo -e "请注意 当你更改了这项设置 需要你手动前往mirai-http-api中的setting.yml中更改配置"
     read change_verifykey
     if echo -e "$change_verifykey" | grep -iq "^y"; then
         echo -e "请输入新的verifyKey："
@@ -20,30 +21,30 @@ function set_mirai_bot {
     else
         verifykey="1234567890"
     fi    
-    echo -e "您是否需要更改mirai-http-api中http_url的端口？（y/n，默认n）"
-    read change_http_url_port
-    if echo -e "$change_http_url_port" | grep -iq "^y"; then
-        echo -e "请输入新的http_http_url的端口："
-        read http_url_port
+    echo -e "您是否需要更改reverse_ws_host的地址？（y/n，默认n）"
+    read change_reverse_ws_host
+    if echo -e "$change_reverse_ws_host" | grep -iq "^y"; then
+        echo -e "请输入新的reverse_ws_host的地址："
+        read reverse_ws_host
     else
-        http_url_port="8080"
+        reverse_ws_host="0.0.0.0"
     fi    
-    echo -e "您是否需要更改mirai-http-api中的ws_url的端口？（y/n，默认n）"
-    read change_ws_url_port
-    if echo -e "$change_ws_url_port" | grep -iq "^y"; then
-        echo -e "请输入新的ws_url的端口："
-        read ws_url_port
+    echo -e "您是否需要更改reverse_ws_port中的ws_port端口？（y/n，默认n）"
+    read change_ws_port
+    if echo -e "$change_ws_port" | grep -iq "^y"; then
+        echo -e "请输入新的ws_prot端口："
+        read ws_port
     else
-        ws_url_port="8080"
+        ws_port="8554"
     fi
     echo -e "[mirai]
 qq = $qq_number
 manager_qq = $manager_qq
 api_key = \"$verifykey\"
-http_url = \"http://mirai:${http_url_port}\"
-ws_url = \"http://mirai:${ws_url_port}\"
+reverse_ws_host = \"${reverse_ws_host}\"
+reverse_ws_port = ${ws_port}
 [openai]
-browserless_endpoint = \"https://bypass.duti.tech/\"" > config.cfg
+browserless_endpoint = \"https://bypass.duti.tech/api/\"" > config.cfg
 }
 #设置bot模式为telegram
 function set_telegram_bot {
