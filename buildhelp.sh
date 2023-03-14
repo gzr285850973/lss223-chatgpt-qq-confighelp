@@ -64,7 +64,7 @@ function main {
     echo -e "5. 使用临时镜像登陆qq"
     echo -e "6. 关闭正在运行的chatgpt-qq"
     echo -e "7. 下载confighelper脚本 进行配置文件编辑"
-    echo -e "请选择1~7"
+    echo -e "请选择1~7(1~7并不是运行顺序 而是你需要什么功能 就用什么功能 不是先运行1 再运行2!)"
     read choice
     case $choice in
       1)
