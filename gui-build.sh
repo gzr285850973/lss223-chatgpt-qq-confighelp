@@ -11,6 +11,7 @@ function start_chatgpt {
     if [ -f "$config_path" ]; then
         cd $chatgpt_path
         docker-compose up -d
+        exit 0
     else
         echo -e "配置文件不存在，请下载程序或者使用confighelper!"
     fi
