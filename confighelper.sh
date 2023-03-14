@@ -44,7 +44,7 @@ api_key = \"$verifykey\"
 reverse_ws_host = \"${reverse_ws_host}\"
 reverse_ws_port = ${ws_port}
 [openai]
-browserless_endpoint = \"https://bypass.duti.tech/api/\"" > config.cfg
+browserless_endpoint = \"https://bypass.duti.tech/\"" > config.cfg
 }
 #设置bot模式为telegram
 function set_telegram_bot {
