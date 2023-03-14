@@ -1,7 +1,7 @@
 #!/bin/bash
-chatgpt_path="$HOME/$USER/chatgpt-qq/"
-config_path="$HOME/$USER/chatgpt-qq/config.cfg"
-confighelper_path="$HOME/$USER/chatgpt-qq/confighelper.sh"
+chatgpt_path="$HOME/chatgpt-qq/"
+config_path="$HOME/chatgpt-qq/config.cfg"
+confighelper_path="$HOME/chatgpt-qq/confighelper.sh"
 #函数定义区
 function build_chatgpt {
     bash -c "$(curl -fsSL https://gist.githubusercontent.com/lss233/54f0f794f2157665768b1bdcbed837fd/raw/chatgpt-mirai-installer-154-16RC3.sh)"
