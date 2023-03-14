@@ -17,7 +17,9 @@ function start_chatgpt {
 function logs_chatgpt {
     if [ -f "$config_path" ]; then
         cd $chatgpt_path
-        docker logs -f
+        ehco -e "请注意，执行本程序如果你的ssh终端不支持图片渲染 可能会导致乱码 退出vps重进即可"
+        sleep 5
+        docker-compose logs -f
     else
         echo -e "配置文件不存在，请下载程序或者使用confighelper!"
     fi
