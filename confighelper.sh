@@ -1,4 +1,9 @@
 #!/bin/bash
+#初始化 这个脚本的代码我承认很蠢 因为我要保证安卓设备能运行 所以各位大佬不要喷
+chatgpt_path="$HOME/chatgpt-qq/"
+config_path="$HOME/chatgpt-qq/config.cfg"
+confighelper_path="$HOME/chatgpt-qq/confighelper.sh"
+rm -rf $config_path
 #函数定义区
 #设置bot模式为mirai
 function set_mirai_bot {
@@ -364,3 +369,4 @@ warning_rate = 0.9
 warning_msg = \"警告：额度即将耗尽！目前已发送：{usage}条消息，最大限制为{limit}条消息/小时，请调整您的节奏。额度限制整点重置，当前服务器时间：{current_time}\"
 exceed = \"已达到额度限制，请等待下一小时继续和我对话。\"" >> config.cfg
 echo -e "配置文件已创建！"
+mv config.cfg $chatgpt_path
