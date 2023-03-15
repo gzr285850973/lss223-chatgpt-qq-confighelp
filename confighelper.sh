@@ -42,9 +42,7 @@ qq = $qq_number
 manager_qq = $manager_qq
 api_key = \"$verifykey\"
 reverse_ws_host = \"${reverse_ws_host}\"
-reverse_ws_port = ${ws_port}
-[openai]
-browserless_endpoint = \"https://bypass.duti.tech/\"" > config.cfg
+reverse_ws_port = ${ws_port}" > config.cfg
 }
 #设置bot模式为telegram
 function set_telegram_bot {
@@ -62,9 +60,7 @@ function set_telegram_bot {
     fi
     echo -e "[telegram]
 bot_token = \"$bot_token\"
-$proxy
-[openai]
-browserless_endpoint = \"https://bypass.duti.tech/\"" > config.cfg
+$proxy" > config.cfg
 }
 # 设置bot模式为onebot
 function set_onebot {
@@ -81,9 +77,28 @@ function set_onebot {
 qq = $qq
 manager_qq = $manager_qq
 reverse_ws_host = \"$reverse_ws_host\"
-reverse_ws_port = $reverse_ws_port
-[openai]
-browserless_endpoint = \"https://bypass.duti.tech/\"" >> config.cfg
+reverse_ws_port = $reverse_ws_port" >> config.cfg
+}
+function select_endpoint {
+    echo -e "现在你需要选择是否使用endpoint"
+    echo -e "endpoint是一个当你的在国外并且ip被openai官方封禁时，使用这个可以不用套额外的t，有利有弊，它方便了我们，但是openai官方也会封禁使用endpoint登陆的用户，见仁见智，本脚本会使用一个默认的endpoint，你可以自行更改"
+    echo -e "请问你是否需要？ ( y/n )"
+    read endpoint_option
+    case $endpoint_option in
+        y)
+            echo -e "你选择了需要使用endpoint，祝你好运"
+            echo -e "[openai]
+browserless_endpoint = \"https://bypass.duti.tech/api/\"" >> config.cfg
+            ;;
+        n)
+            echo -e "你选择了不需要endpoint，祝你好运"
+            echo -e "[openai]" >> config.cfg
+            ;;
+        *)
+            echo -e "输入错误 请重新输入"
+            select_endpoint
+            ;;
+    esac
 }
 #设置浏览器模式
 function select_browser_mode {
@@ -232,6 +247,7 @@ if echo -e "$is_linux" | grep -iq "^n"; then
     exit 1
 fi
 select_bot
+select_endpoint
 login_openai
 clear
 echo -e "请问你是否要添加bing账号（y/n，默认n）"
