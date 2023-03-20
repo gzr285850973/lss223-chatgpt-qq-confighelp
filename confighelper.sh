@@ -6,7 +6,7 @@ confighelper_path="$HOME/chatgpt-qq/confighelper.sh"
 rm -rf $config_path 
 #函数定义区 
 #设置bot模式为mirai 
-function set_mirai_bot { 
+function set_mirai_bot { 
     echo -e "\033[32m接下来是mirai的配置\033[0m" 
     echo -e  "您机器人的QQ号是多少？" 
     read qq_number 
@@ -24,11 +24,11 @@ function set_mirai_bot {
     echo -e "您是否需要更改reverse_ws_host的地址？（y/n，默认n）" 
     read change_reverse_ws_host 
     if echo -e "$change_reverse_ws_host" | grep -iq "^y"; then 
-        echo -e "请输入新的reverse_ws_host的地址：" 
-        read reverse_ws_host 
+        echo -e "请输入新的reverse_ws_host的地址：" 
+        read reverse_ws_host 
     else 
-        reverse_ws_host="0.0.0.0" 
-    fi     
+        reverse_ws_host="0.0.0.0" 
+    fi
     echo -e "您是否需要更改reverse_ws_port中的ws_port端口？（y/n，默认n）" 
     read change_ws_port 
     if echo -e "$change_ws_port" | grep -iq "^y"; then 
@@ -130,7 +130,7 @@ mode = \"${browser_mode}\"" >> config.cfg
 #设置代理 
 function set_proxy { 
     echo -e "正向代理设置 如果你的ip或服务器ip在国内 则需设置正向代理 具体请看项目文档 这一步为不可控"
-    echo -e "请问你是否需要？(y\n)默认n"
+    echo -e "请问你是否需要？(y/n)"
     read proxy
     if echo -e "$proxy" | grep -iq "^y"; then
         echo -e "proxy = \"${proxy}\"" >> config.cfg 
