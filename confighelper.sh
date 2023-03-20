@@ -130,7 +130,7 @@ mode = \"${browser_mode}\"" >> config.cfg
 #设置代理 
 function set_proxy { 
     echo -e "正向代理设置 如果你的ip或服务器ip在国内 则需设置正向代理 具体请看项目文档 这一步为不可控"
-    echo -e "请问你是否需要？ (y\n)  默认y
+    echo -e "请问你是否需要？ (y\n)  默认n
     read proxy
     if echo -e "$proxy" | grep -iq "^y"; then
         echo -e "proxy = \"${proxy}\"" >> config.cfg 
