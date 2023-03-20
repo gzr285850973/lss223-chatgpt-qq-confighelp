@@ -1,5 +1,5 @@
 #!/bin/bash 
- #初始化 这个脚本的代码我承认很蠢 因为我要保证安卓设备能运行 所以各位大佬不要喷 
+#初始化 这个脚本的代码我承认很蠢 因为我要保证安卓设备能运行 所以各位大佬不要喷 
 chatgpt_path="$HOME/chatgpt-qq/" 
 config_path="$HOME/chatgpt-qq/config.cfg" 
 confighelper_path="$HOME/chatgpt-qq/confighelper.sh" 
